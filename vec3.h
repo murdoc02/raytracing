@@ -4,6 +4,10 @@
 #include <cmath>
 #include <iostream>
 
+inline double random_double();
+inline double random_double(double min, double max);
+inline double clamp(double x, double min, double max);
+
 class vec3
 {
   public:
@@ -116,6 +120,10 @@ inline vec3 random_in_unit_sphere()
             continue;
         return p;
     }
+}
+
+inline vec3 random_unit_vector() {
+    return unit_vector(random_in_unit_sphere());
 }
 
 #endif
